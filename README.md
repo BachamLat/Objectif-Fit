@@ -10,9 +10,9 @@ Tout est enregistré sur le téléphone : chaque personne qui installe l'appli a
 
 À chaque modification envoyée sur ce dépôt, GitHub compile l'appli automatiquement (onglet **Actions**, traitement « Construire l'APK Android », 8 à 15 min).
 
-1. Ouvre le dernier traitement terminé (coche verte), puis en bas **Artifacts > objectif-fit-apk**. Tu télécharges un `.zip` qui contient `app-release.apk`.
-2. Sur le téléphone Android : ouvre le zip dans **Mes fichiers**, extrais-le, touche `app-release.apk`. Autorise l'installation depuis cette source si le téléphone le demande. Si Play Protect affiche un avertissement, choisis **Installer quand même** (l'appli n'est simplement pas publiée sur le Play Store).
-3. Pour la partager (à ta sœur par exemple), envoie-lui simplement le fichier `app-release.apk`.
+1. Quand le traitement est terminé (coche verte), l'APK est publié dans **Releases > Objectif Fit (dernière version)** : télécharge `objectif-fit.apk` depuis le téléphone. Lien direct : `https://github.com/BachamLat/Objectif-Fit/releases/download/derniere-version/objectif-fit.apk`.
+2. Sur le téléphone Android : ouvre `objectif-fit.apk` (dans **Mes fichiers > Téléchargements**). Autorise l'installation depuis cette source si le téléphone le demande. Si Play Protect affiche un avertissement, choisis **Installer quand même** (l'appli n'est simplement pas publiée sur le Play Store).
+3. Pour la partager (à ta sœur par exemple), envoie-lui le lien direct ou le fichier `objectif-fit.apk`.
 
 ## Compiler sur un PC (facultatif)
 
