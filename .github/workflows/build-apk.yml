@@ -1,0 +1,42 @@
+name: Construire l'APK Android
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Générer les dossiers Android et iOS
+        run: flutter create --org com.objectiffit --project-name objectif_fit --platforms android,ios .
+
+      - name: Adapter la configuration (Health Connect, minSdk 26…)
+        run: dart setup/patch.dart
+
+      - name: Dépendances
+        run: flutter pub get
+
+      - name: Vérifier le code
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Construire l'APK
+        run: flutter build apk --release
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: objectif-fit-apk
+          path: build/app/outputs/flutter-apk/app-release.apk

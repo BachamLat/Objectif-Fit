@@ -1,0 +1,4 @@
+# Analyse par défaut de Dart (sans dépendance supplémentaire).
+analyzer:
+  errors:
+    unused_import: warning
